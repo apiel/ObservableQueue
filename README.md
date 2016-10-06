@@ -17,3 +17,22 @@ Observable queue help you to create a queue of observable and wait for all them 
 	observableQueue.subscribe(obs, data => console.log(data), null, () => console.log('hi'));
 	observableQueue.subscribe(obs, data => console.log(data), null, () => console.log('hi'));
 	observableQueue.subscribe(obs, data => console.log(data), null, () => console.log('hi'));
+	
+	
+The output will be:
+
+	$ npm start
+
+	> test@1.0.0 start /home/apiel/share/typescript/ObservableQueue
+	> tsc && node dist/example/example.js
+
+	start
+	start
+	start
+	{ hello: 'world' }
+	hi
+	{ hello: 'world' }
+	hi
+	{ hello: 'world' }
+	hi
+	completed
