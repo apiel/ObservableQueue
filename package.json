@@ -1,8 +1,8 @@
 {
-  "name": "test",
+  "name": "ObservableQueue",
   "version": "0.0.1",
-  "description": "test",
-  "main": "test.js",
+  "description": "Observable queue help you to create a queue of observable and wait for all them to finish before to trigger a callback function.",
+  "main": "ObservableQueue.ts",
   "scripts": {
     "start": "tsc && node dist/example/example.js"
   },
