@@ -1,13 +1,20 @@
 {
   "name": "test",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "test",
   "main": "test.js",
   "scripts": {
     "start": "tsc && node dist/example/example.js"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/apiel/ObservableQueue.git"
+  },
+  "author": "Alexandre Piel",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/apiel/ObservableQueue/issues"
+  },
   "dependencies": {
     "rx": "^4.1.0",
     "typescript": "^1.8.10"
