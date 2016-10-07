@@ -14,7 +14,7 @@ export class ObservableQueue{
 	queue: ObservableItem[] = [];
         processingCount: number = 0;
 	
-	constructor(private onCompleted, private maxProcess: number = 0) {}
+	constructor(private onCompleted, private maxProcess: number) {}
 	
 	protected done() {
             if (!--this.processingCount) {
@@ -46,25 +46,5 @@ export class ObservableQueue{
             this.shiftProcess();
             
             return observer;
-	}
-}
-
-export class ObservableQ{
-	queue: number = 0;
-	
-	constructor(private onCompleted) {}
-	
-	protected done() {
-		if (!--this.queue) {
-			this.onCompleted();
-		}
-	}
-	
-	subscribe(observer: Observable<any>, onNext?: any, onError?: any, onCompleted?: () => any) {
-		this.queue++;
-		return observer.subscribe(next => onNext(next), error => onError(error), function() {
-			onCompleted();
-			this.done();
-		}.bind(this));
 	}
 }

@@ -1,15 +1,16 @@
 import { Observable } from 'rx';
-import { ObservableQ } from './../ObservableQueue';
+import { ObservableQueue } from './../ObservableQueue';
 
 var obs = Observable.create(function(observer) {
-	console.log('start');
+	console.log('start ' + (new Date).toLocaleTimeString());
 	setTimeout(function() {
 		observer.onNext({'hello': 'world'});
 		observer.onCompleted();
-	}, 1);
+	}, 1000);
 });
 
-let observableQ = new ObservableQ(() => console.log('completed'));
-observableQ.subscribe(obs, data => console.log(data), null, () => console.log('hi'));
-observableQ.subscribe(obs, data => console.log(data), null, () => console.log('hi'));
-observableQ.subscribe(obs, data => console.log(data), null, () => console.log('hi'));
+// Here allow only 2 observer at the same time
+let observableQueue = new ObservableQueue(() => console.log('completed'), 2);
+observableQueue.subscribe(obs, data => console.log(data), null, () => console.log('hi ' + (new Date).toLocaleTimeString()));
+observableQueue.subscribe(obs, data => console.log(data), null, () => console.log('hi ' + (new Date).toLocaleTimeString()));
+observableQueue.subscribe(obs, data => console.log(data), null, () => console.log('hi ' + (new Date).toLocaleTimeString()));
