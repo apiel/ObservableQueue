@@ -1,6 +1,6 @@
 {
   "name": "ObservableQueue",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Observable queue help you to create a queue of observable and wait for all them to finish before to trigger a callback function.",
   "main": "ObservableQueue.ts",
   "scripts": {
