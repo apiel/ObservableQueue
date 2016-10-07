@@ -18,3 +18,18 @@ observableQueue.subscribe(obs, data => console.log(data), null, () => console.lo
 setTimeout(function() {
     observableQueue.subscribe(obs, data => console.log(data), null, () => console.log('hi ' + (new Date).toLocaleTimeString()));
 }, 4000);
+
+
+//let observableQueue = new ObservableQueue(() => console.log('completed: queue is empty'), 2);
+//observableQueue.subscribe(obs, data => test(data), null, () => console.log('hi ' + (new Date).toLocaleTimeString()), 'a');
+//observableQueue.subscribe(obs, data => test(data), null, () => console.log('hi ' + (new Date).toLocaleTimeString())/*, 'b'*/);
+//observableQueue.subscribe(obs, data => test(data), null, () => console.log('hi ' + (new Date).toLocaleTimeString()), 'c');
+//observableQueue.subscribe(obs, data => test(data), null, () => console.log('hi ' + (new Date).toLocaleTimeString()));
+//observableQueue.subscribe(obs, data => test(data), null, () => console.log('hi ' + (new Date).toLocaleTimeString()));
+//observableQueue.subscribe(obs, data => test(data), null, () => console.log('hi ' + (new Date).toLocaleTimeString()), 'e');
+//observableQueue.subscribe(obs, data => test(data), null, () => console.log('hi ' + (new Date).toLocaleTimeString()), 'f');
+//
+//function test(data) {
+//    console.log(observableQueue.getProcessingids());
+//    console.log(data)
+//}
