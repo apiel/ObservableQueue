@@ -1,5 +1,5 @@
 import { Observable } from 'rx';
-import { ObservableQueue } from './../ObservableQueue';
+import { ObservableQ } from './../ObservableQueue';
 
 var obs = Observable.create(function(observer) {
 	console.log('start');
@@ -9,7 +9,7 @@ var obs = Observable.create(function(observer) {
 	}, 1);
 });
 
-let observableQueue = new ObservableQueue(() => console.log('completed'));
-observableQueue.subscribe(obs, data => console.log(data), null, () => console.log('hi'));
-observableQueue.subscribe(obs, data => console.log(data), null, () => console.log('hi'));
-observableQueue.subscribe(obs, data => console.log(data), null, () => console.log('hi'));
+let observableQ = new ObservableQ(() => console.log('completed'));
+observableQ.subscribe(obs, data => console.log(data), null, () => console.log('hi'));
+observableQ.subscribe(obs, data => console.log(data), null, () => console.log('hi'));
+observableQ.subscribe(obs, data => console.log(data), null, () => console.log('hi'));
