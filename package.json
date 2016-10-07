@@ -1,6 +1,6 @@
 {
   "name": "ObservableQueue",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "ObservableQueue help you to create a queue of observable to be executed with a limit of simultaneous process and wait for all them to finish before to trigger a finale callback function.",
   "main": "ObservableQueue.ts",
   "scripts": {

@@ -14,7 +14,7 @@ export class ObservableQueue{
 	queue: ObservableItem[] = [];
         processingCount: number = 0;
 	
-	constructor(private onCompleted, private maxProcess: number) {}
+	constructor(private onCompleted, private maxProcess: number = 0) {}
 	
 	protected done() {
             if (!--this.processingCount) {
@@ -24,7 +24,7 @@ export class ObservableQueue{
 	}
 	
         protected shiftProcess() {
-            if (this.queue.length && this.processingCount < this.maxProcess) {
+            if (this.queue.length && (!this.maxProcess || this.processingCount < this.maxProcess)) {
                 this.processingCount++;
                 let observableItem: ObservableItem = this.queue.shift();
                 observableItem.observer.subscribe(

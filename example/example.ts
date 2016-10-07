@@ -10,7 +10,11 @@ var obs = Observable.create(function(observer) {
 });
 
 // Here allow only 2 observer at the same time
-let observableQueue = new ObservableQueue(() => console.log('completed'), 2);
+let observableQueue = new ObservableQueue(() => console.log('completed: queue is empty'), 2);
 observableQueue.subscribe(obs, data => console.log(data), null, () => console.log('hi ' + (new Date).toLocaleTimeString()));
 observableQueue.subscribe(obs, data => console.log(data), null, () => console.log('hi ' + (new Date).toLocaleTimeString()));
 observableQueue.subscribe(obs, data => console.log(data), null, () => console.log('hi ' + (new Date).toLocaleTimeString()));
+
+setTimeout(function() {
+    observableQueue.subscribe(obs, data => console.log(data), null, () => console.log('hi ' + (new Date).toLocaleTimeString()));
+}, 4000);
