@@ -11,9 +11,9 @@ class ObservableItem{
 }
 
 export class ObservableQueue{
-	queue: ObservableItem[] = [];
-        processingCount: number = 0;
-        processingIds: string[] = [];
+	private queue: ObservableItem[] = [];
+        private processingCount: number = 0;
+        private processingIds: string[] = [];
 	
 	constructor(private onCompleted, private maxProcess: number = 0) {}
 	
